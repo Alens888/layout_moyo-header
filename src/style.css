@@ -1,3 +1,180 @@
-body {
+/* Reset styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --blue: #007bff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 23px;
+  position: relative;
+}
+
+/* Navigation */
+.nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav li + li {
+  margin-left: 20px;
+}
+
+.nav a {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav a.apple {
+  color: #00ACDC;
+}
+
+.nav a.apple::before {
+  content: '';
+  position: absolute;
+  bottom: -18.5px;
+  left: 0;
+  width: 37px;
+  height: 4px;
+  background: #00ACDC;
+  border-radius: 8px;
+}
+
+.nav a.apple::after {
+  /* підкреслення при hover */
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transition: width 0.3s;
+}
+
+.nav a.apple:hover::after,
+.nav a.apple:focus::after {
+  width: 100%;
+}
+
+
+.nav a.laptops {
+  color: #00ACDC;
+}
+
+.nav a.laptops::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transition: width 0.3s;
+}
+
+.nav a.laptops:hover::after,
+.nav a.laptops:focus::after {
+  width: 100%;
+}
+
+.nav a:not(.apple):not(.laptops)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transition: width 0.3s;
+}
+
+.nav a:not(.apple):not(.laptops):hover::after,
+.nav a:not(.apple):not(.laptops):focus::after {
+  width: 100%;
+}
+
+.nav a.apple:hover,
+.nav a.apple:focus,
+.nav a.laptops:hover,
+.nav a.laptops:focus {
+  color: #00ACDC;
+}
+
+/* Logo, search, icons */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search button {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--blue);
+  color: #fff;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #0056b3;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
 }
