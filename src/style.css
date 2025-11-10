@@ -1,6 +1,6 @@
 /* Font */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto , sans-serif;
 }
 
 /* CSS Variables */
@@ -31,7 +31,7 @@ body {
 
 /* Базові посилання чорні */
 .nav a {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 50px; /* висота посилань */
@@ -46,7 +46,7 @@ body {
 }
 
 /* Hover underline для звичайних посилань */
-.nav a:not(.apple):not(.laptops)::after {
+.nav a:not(.apple, .laptops)::after {
   content: '';
   position: absolute;
   left: 0;
@@ -57,13 +57,13 @@ body {
   transition: width 0.3s;
 }
 
-.nav a:not(.apple):not(.laptops):hover::after,
-.nav a:not(.apple):not(.laptops):focus::after {
+.nav a:not(.apple, .laptops):hover::after,
+.nav a:not(.apple, .laptops):focus::after {
   width: 100%;
 }
 
 /* Активне підкреслення для звичайних посилань */
-.nav a.is-active:not(.apple):not(.laptops)::after {
+.nav a.is-active:not(.apple, .laptops)::after {
   width: 100%;
 }
 
