@@ -63,7 +63,7 @@ body {
 }
 
 /* Активне підкреслення для звичайних посилань */
-.nav a.is-active:not(.apple, .laptops)::after {
+.nav a.is-active::after {
   width: 100%;
 }
 
