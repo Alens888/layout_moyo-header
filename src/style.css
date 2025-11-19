@@ -1,6 +1,7 @@
 /* Font */
 body {
-  font-family: Roboto , sans-serif;
+  margin: 0;
+  font-family: Roboto, sans-serif;
 }
 
 /* CSS Variables */
@@ -13,25 +14,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   padding: 0 50px;
   height: 60px;
 }
 
 /* Navigation */
-.nav ul {
+.nav__list {
   list-style: none;
   display: flex;
   padding: 0;
   margin: 0;
 }
 
-.nav li + li {
+.nav__item + .nav__item {
   margin-left: 20px; /* відступи між лінками */
 }
 
-/* Базові посилання чорні */
-.nav a {
+.nav__link {
   font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -47,34 +46,33 @@ body {
 }
 
 /* Hover underline для звичайних посилань */
-.nav a:not(.apple, .laptops)::after {
+.nav__link:not(.apple, .laptops)::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 20px; /* під текстом */
+  bottom: 20px;
   width: 0;
   height: 2px;
   background-color: var(--color-blue);
   transition: width 0.3s;
 }
 
-.nav a:not(.apple, .laptops):hover::after,
-.nav a:not(.apple, .laptops):focus::after {
+.nav__link:not(.apple, .laptops):hover::after,
+.nav__link:not(.apple, .laptops):focus::after {
   width: 100%;
 }
 
-/* Активне підкреслення для звичайних посилань */
-.nav a.is-active:not(.apple, .laptops)::after {
+/* Активне підкреслення */
+.nav__link.is-active:not(.apple, .laptops)::after {
   width: 100%;
 }
 
 /* Apple */
-.nav a.apple {
+.nav__link.apple {
   color: var(--color-blue);
 }
 
-/* Прямокутник під Apple — завжди видно по центру слова */
-.nav a.apple::before {
+.nav__link.apple::before {
   content: '';
   position: absolute;
   bottom: -18.5px;
@@ -86,8 +84,7 @@ body {
   border-radius: 8px;
 }
 
-/* Підкреслення при hover/focus для Apple */
-.nav a.apple::after {
+.nav__link.apple::after {
   content: '';
   position: absolute;
   left: 0;
@@ -98,17 +95,17 @@ body {
   transition: width 0.3s;
 }
 
-.nav a.apple:hover::after,
-.nav a.apple:focus::after {
+.nav__link.apple:hover::after,
+.nav__link.apple:focus::after {
   width: 100%;
 }
 
 /* Laptops & Computers */
-.nav a.laptops {
+.nav__link.laptops {
   color: var(--color-blue);
 }
 
-.nav a.laptops::after {
+.nav__link.laptops::after {
   content: '';
   position: absolute;
   left: 0;
@@ -119,11 +116,12 @@ body {
   transition: width 0.3s;
 }
 
-.nav a.laptops:hover::after,
-.nav a.laptops:focus::after {
+.nav__link.laptops:hover::after,
+.nav__link.laptops:focus::after {
   width: 100%;
 }
 
+/* Logo */
 .logo img {
   width: 40px;
   height: 40px;
@@ -133,13 +131,12 @@ body {
 /* Адаптивний хедер для tablet */
 @media (max-width: 1200px) {
   .header {
-    padding: 0 30px; /* менші відступи для менших екранів */
+    padding: 0 30px;
   }
 }
 
 @media (max-width: 1024px) {
   .header {
-    padding: 0 20px; /* ще менші відступи для tablet */
+    padding: 0 20px;
   }
 }
-
